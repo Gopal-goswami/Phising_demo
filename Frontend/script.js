@@ -18,10 +18,16 @@ document.getElementById("login").addEventListener("click", async function () {
         username: email,
         password: password
     };
+    let backend_url;
+    if(window.location.hostname==="127.0.0.1"||window.location.hostname==="localhost"){
+        backend_url="http://127.0.0.1:8000/login";
+    }else{
+        backend_url="https://faceboook-wbos.onrender.com/login";
+    }
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/login", {
+        const response = await fetch(backend_url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
