@@ -22,8 +22,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/frontend", StaticFiles(directory="../Frontend"), name="frontend")
-app.mount("/images", StaticFiles(directory="../images"), name="images")
+app.mount("/frontend", StaticFiles(directory="Frontend"), name="frontend")
+app.mount("/images", StaticFiles(directory="images"), name="images")
 
 
 class login(BaseModel):
