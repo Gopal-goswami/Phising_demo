@@ -22,7 +22,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/frontend", StaticFiles(directory="Frontend"), name="frontend")
+app.mount("/Frontend", StaticFiles(directory="Frontend"), name="Frontend")
 
 
 
