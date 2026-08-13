@@ -131,3 +131,112 @@
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 12px;
 }
+
+
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        height: 220px;
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 220px);
+        box-sizing: border-box;
+
+        padding: 40px 25px;
+        gap: 15px;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #title {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .input-field {
+        width: 100%;
+        height: 52px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .input-box label {
+        font-size: 16px;
+    }
+
+    .login-btn {
+        width: 100%;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #forgot-password,
+    #create-account {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    #error-message {
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .left {
+        height: 170px;
+        min-height: 170px;
+    }
+
+    .right {
+        min-height: calc(100vh - 170px);
+        padding: 30px 18px;
+        gap: 12px;
+    }
+
+    #title {
+        font-size: 17px;
+    }
+
+    .input-field {
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .input-box label {
+        font-size: 15px;
+    }
+
+    .login-btn {
+        height: 42px;
+    }
+}
