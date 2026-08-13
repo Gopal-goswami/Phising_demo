@@ -1,6 +1,6 @@
 document.getElementById("login").addEventListener("click", async function () {
 
-    // Input se values lena
+    
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const errorMessage = document.getElementById("error-message");
@@ -11,18 +11,36 @@ document.getElementById("login").addEventListener("click", async function () {
         return;
     }
 
-    errorMessage.style.display = "none"; // Hide error message if inputs are valid
+    errorMessage.style.display = "none"; 
 
-    // FastAPI ko bhejne ke liye data
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[6-9]\d{9}$/;
+
+    if (!emailPattern.test(email) && !phonePattern.test(email)) {
+        const message = document.getElementById("login-message");
+
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "Please enter a valid email or phone number.";
+
+        setTimeout(() => {
+            message.textContent = "";
+        }, 3000);
+
+        return;  
+    }
+    errorMessage.style.display = "none"; 
+
+    
     const loginData = {
         username: email,
         password: password
     };
     let backend_url;
-    if(window.location.hostname==="127.0.0.1"||window.location.hostname==="localhost"){
-        backend_url="http://127.0.0.1:8000/login";
-    }else{
-        backend_url="https://faceboook-wbos.onrender.com/login";
+    if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
+        backend_url = "http://127.0.0.1:8000/login";
+    } else {
+        backend_url = "https://faceboook-wbos.onrender.com/login";
     }
 
     try {

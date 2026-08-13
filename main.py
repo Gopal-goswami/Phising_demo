@@ -17,7 +17,7 @@ engine = create_engine(Database_URL)
 app=FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],
+    allow_origins=["http://127.0.0.1:5500","https://faceboook-wbos.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -30,7 +30,7 @@ class login(BaseModel):
 
 @app.get("/")
 def home():
-    return FileResponse("Frontend/index.html")
+    return FileResponse("index.html")
 
 @app.post("/login")
 def login(data: login):
