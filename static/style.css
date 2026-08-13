@@ -15,7 +15,7 @@
 .left {
     width: 60%;
     height: 100%;
-    background-image: url('faceboook.png');
+    background-image: url('/static/faceboook.png');
     background-size: cover;
     display: flex;
     justify-content: center;
