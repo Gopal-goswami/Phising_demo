@@ -23,6 +23,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/files", StaticFiles(directory="."), name="files")
+
 
 class login(BaseModel):
     username: str
